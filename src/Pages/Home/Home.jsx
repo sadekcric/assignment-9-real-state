@@ -1,7 +1,11 @@
+import CartSection from "./CartSection";
+import Slider from "./Slider";
+
 const Home = () => {
   return (
     <div>
-      <h1>This is Home pages</h1>
+      <Slider />
+      <CartSection />
     </div>
   );
 };

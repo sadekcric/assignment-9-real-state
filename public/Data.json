@@ -1,0 +1,126 @@
+[
+  {
+    "id": 1,
+    "estate_title": "Cozy Apartment in Downtown",
+    "segment_name": "Apartment",
+    "description": "Welcome to your cozy retreat in the heart of downtown! This beautiful one-bedroom apartment offers a perfect blend of comfort and convenience. The open-concept layout features a spacious living area, ideal for entertaining or relaxing after a busy day. The modern kitchen is equipped with stainless steel appliances and ample storage space. Enjoy the convenience of in-unit laundry and the luxury of a private balcony overlooking the city skyline. With parking available and a gym and swimming pool on-site, this apartment has everything you need for urban living at its best.",
+    "price": 1500,
+    "status": "rent",
+    "area": 800,
+    "location": "Downtown",
+    "facilities": ["Parking", "Gym", "Swimming Pool"],
+    "image": "https://i.ibb.co/9N2Vx6X/appertment.jpg",
+    "additional_information": {
+      "bedrooms": 1,
+      "bathrooms": 1,
+      "floor": 5,
+      "year_built": 2010
+    }
+  },
+  {
+    "id": 2,
+    "estate_title": "Spacious Family Home with Garden",
+    "segment_name": "Single-family home",
+    "description": "Welcome home to this spacious and inviting family retreat! Situated in a peaceful suburban neighborhood, this three-bedroom home offers ample space for comfortable living and entertaining. The open-concept layout features a sunlit living room with a cozy fireplace, perfect for family gatherings. The updated kitchen boasts granite countertops and stainless steel appliances, with a dining area that opens onto a private backyard oasis. With a two-car garage and easy access to parks and schools, this home is perfect for families seeking both space and convenience.",
+    "price": 300000,
+    "status": "sale",
+    "area": 2000,
+    "location": "Suburbia",
+    "facilities": ["Garden", "Garage", "Fireplace"],
+    "image": "https://i.ibb.co/JdVzGtj/single-House.jpg",
+    "additional_information": {
+      "bedrooms": 3,
+      "bathrooms": 2,
+      "lot_size": "0.25 acres",
+      "year_built": 1995
+    }
+  },
+  {
+    "id": 3,
+    "estate_title": "Luxury Condo with Ocean View",
+    "segment_name": "Apartment",
+    "description": "Indulge in luxury living with breathtaking ocean views! This stunning two-bedroom condo offers the ultimate in coastal elegance and sophistication. The spacious living area features floor-to-ceiling windows that frame panoramic views of the ocean and coastline. The gourmet kitchen is equipped with high-end appliances and custom cabinetry, perfect for entertaining guests or enjoying quiet meals at home. Relax and unwind on your private balcony, watching the sunset over the water. With resort-style amenities including a fitness center and 24-hour security, this condo offers the epitome of coastal living.",
+    "price": 500000,
+    "status": "sale",
+    "area": 1200,
+    "location": "Beachfront",
+    "facilities": ["Ocean View", "Fitness Center", "Security"],
+    "image": "https://i.ibb.co/37X9Mvx/appertment2.jpg",
+    "additional_information": {
+      "bedrooms": 2,
+      "bathrooms": 2,
+      "floor": 10,
+      "year_built": 2015
+    }
+  },
+  {
+    "id": 4,
+    "estate_title": "Cozy Townhouse in Historic District",
+    "segment_name": "Townhouse",
+    "description": "Step back in time with this charming townhouse in the heart of the historic district! This quaint two-bedroom home exudes character and charm, with original hardwood floors and exposed brick walls. The cozy living room features a fireplace, perfect for cozying up with a book on chilly evenings. The updated kitchen boasts modern appliances and plenty of cabinet space, with a dining area that opens onto a private patio. With walk-in closets and additional storage space, this townhouse offers both style and practicality in a vibrant urban setting.",
+    "price": 250000,
+    "status": "sale",
+    "area": 1500,
+    "location": "Historic District",
+    "facilities": ["Patio", "Fireplace", "Walk-in Closet"],
+    "image": "https://i.ibb.co/FXpsBph/Townhouse.jpg",
+    "additional_information": {
+      "bedrooms": 2,
+      "bathrooms": 1.5,
+      "year_built": 1920
+    }
+  },
+  {
+    "id": 5,
+    "estate_title": "Modern Studio Apartment",
+    "segment_name": "Apartment",
+    "description": "Welcome to your urban oasis! This sleek studio apartment boasts a minimalist design with high-end finishes. The open layout maximizes space and natural light, creating an inviting atmosphere. The kitchen features stainless steel appliances and ample storage, perfect for whipping up your favorite meals. The living area is versatile and can easily accommodate both living and sleeping arrangements. Enjoy the convenience of in-unit laundry and the security of a controlled-access building. Located in the heart of the city center, you'll have easy access to shopping, dining, and entertainment options.",
+    "price": 1000,
+    "status": "rent",
+    "area": 500,
+    "location": "City Center",
+    "facilities": ["Laundry Room", "Bike Storage", "Roof Deck"],
+    "image": "https://i.ibb.co/k16YjVn/appertment3.jpg",
+    "additional_information": {
+      "bedrooms": 0,
+      "bathrooms": 1,
+      "floor": 3,
+      "year_built": 2018
+    }
+  },
+  {
+    "id": 6,
+    "estate_title": "Senior Living Community",
+    "segment_name": "Senior Living",
+    "description": "Experience retirement living at its finest in our welcoming community designed for seniors. Our spacious units are thoughtfully designed with your comfort and convenience in mind, featuring modern amenities and safety features. Enjoy chef-prepared meals in our elegant dining hall, stay active with a variety of recreational activities, and rest easy knowing medical services are available onsite. Our compassionate staff is dedicated to providing personalized care and support tailored to your needs. Located in a serene suburban setting, you'll enjoy peace and tranquility while remaining close to essential services and amenities.",
+    "price": 3500,
+    "status": "rent",
+    "area": 1000,
+    "location": "Suburban Retirement Village",
+    "facilities": ["Dining Hall", "Medical Services", "Recreation Center"],
+    "image": "https://i.ibb.co/8bX5tBB/Senior-Living.jpg",
+    "additional_information": {
+      "units_available": 50,
+      "care_levels": ["Independent Living", "Assisted Living", "Memory Care"],
+      "year_established": 2010
+    }
+  },
+  {
+    "id": 7,
+    "estate_title": "Vacation Villa with Private Pool",
+    "segment_name": "Vacation Rental",
+    "description": "Escape to paradise in our stunning vacation villa nestled in a lush tropical setting. This luxurious retreat offers the ultimate in relaxation and privacy, with breathtaking views and upscale amenities. Unwind by your private pool surrounded by swaying palm trees, or sip cocktails in the outdoor kitchen while enjoying panoramic ocean views. Inside, the villa features spacious bedrooms with en-suite bathrooms, a fully equipped kitchen, and stylish living areas. Whether you're lounging poolside, exploring the island's attractions, or enjoying water sports, your vacation dreams await at our exclusive villa.",
+    "price": 5000,
+    "status": "rent",
+    "area": 3000,
+    "location": "Island Retreat",
+    "facilities": ["Private Pool", "Outdoor Kitchen", "Ocean Access"],
+    "image": "https://example.com/images/villa1.jpg",
+    "additional_information": {
+      "bedrooms": 4,
+      "bathrooms": 4,
+      "guest_capacity": 8,
+      "amenities": ["Air Conditioning", "WiFi", "BBQ Grill"]
+    }
+  }
+]

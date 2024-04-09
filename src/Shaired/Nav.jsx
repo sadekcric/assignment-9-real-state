@@ -12,7 +12,6 @@ const Nav = () => {
       setHide("hidden");
     }
   };
-  console.log(hide);
 
   // ============List Item==========
   const navLink = (
@@ -44,6 +43,20 @@ const Nav = () => {
           Update Profile
         </NavLink>
       </li>
+
+      {/* for Mobile */}
+      <li className="lg:hidden">
+        <NavLink
+          to="/login"
+          className={({ isActive }) =>
+            isActive
+              ? "py-3 flex items-center px-6 -mb-1 bg-green-500 rounded-md dark:border- dark:text-violet-600 dark:border-violet-600 transition"
+              : "flex items-center py-3 px-6 -mb-1 border-b-2 border-green-500 dark:border- dark:text-violet-600 dark:border-violet-600 transition"
+          }
+        >
+          Sign in
+        </NavLink>
+      </li>
     </>
   );
 
@@ -68,11 +81,14 @@ const Nav = () => {
         <ul className="items-stretch hidden space-x-3 lg:flex">{navLink}</ul>
 
         {/* =========for Mobile======== */}
-        <ul className={`items-end absolute top-20 right-0 container ${hide} space-x-3 flex-col gap-3 w-full lg:hidden`}>{navLink}</ul>
+        <ul
+          className={`items-end absolute top-16 w-full right-0 container ${hide} space-x-3 flex-col gap-3 w-full lg:hidden bg-green-950 p-5`}
+        >
+          {navLink}
+        </ul>
 
         <div className="items-center flex-shrink-0 hidden lg:flex">
-          <button className="self-center px-8 py-3 rounded">Sign in</button>
-          <button className="self-center px-8 py-3 font-semibold rounded dark:bg-violet-600 dark:text-gray-50">Sign up</button>
+          <button className="self-center px-8 py-3 rounded font-semibold">Sign in</button>
         </div>
 
         <button onClick={handleResponsive} className="p-4 lg:hidden">

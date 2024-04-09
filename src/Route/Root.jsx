@@ -1,11 +1,19 @@
 import { Outlet } from "react-router-dom";
 import Nav from "../Shaired/Nav";
+import Footer from "../Shaired/Footer";
 
 const Root = () => {
   return (
-    <div className="bg-blue-950 text-white min-h-screen">
-      <Nav />
-      <Outlet />
+    <div className="font-poppins ">
+      <div className=" bg-green-950 sticky top-0 z-10 text-white">
+        <Nav />
+      </div>
+      <div className="min-h-[calc(100vh-240px)] bg-white">
+        <Outlet />
+      </div>
+      <div className="bg-green-950 text-white">
+        <Footer />
+      </div>
     </div>
   );
 };
