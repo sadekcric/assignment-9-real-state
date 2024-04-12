@@ -88,7 +88,9 @@ const Nav = () => {
         </ul>
 
         <div className="items-center flex-shrink-0 hidden lg:flex">
-          <button className="self-center px-8 py-3 rounded font-semibold">Sign in</button>
+          <Link to="/login" className="self-center px-8 py-3 rounded font-semibold">
+            Sign in
+          </Link>
         </div>
 
         <button onClick={handleResponsive} className="p-4 lg:hidden">

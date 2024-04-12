@@ -8,8 +8,12 @@ const CartSection = () => {
   return (
     <div className=" mt-10 lg:mt-24 container mx-auto p-3">
       <div className="text-center space-y-3 mb-5 lg:mb-10">
-        <p className="text-green-500 font-semibold text-lg">Our Featured Properties For Sale and Rent</p>
-        <h3 className="font-bold text-2xl lg:text-4xl ">Properties For Sale & Rent</h3>
+        <p className="text-green-500 font-semibold text-sm lg:text-lg animate__animated animate__fadeInDown animate__slow">
+          Our Featured Properties For Sale and Rent
+        </p>
+        <h3 className="font-bold text-2xl lg:text-4xl animate__animated animate__fadeInUp animate__slow animate__delay-1s">
+          Properties For Sale & Rent
+        </h3>
       </div>
       <div className="text-xl font-semibold">
         <Tabs>
@@ -18,7 +22,7 @@ const CartSection = () => {
               <span className="lg:px-6 lg:py-3">All</span>
             </Tab>
             <Tab>
-              <span className="lg:px-6 lg:py-3">Sell</span>
+              <span className="lg:px-6 lg:py-3">Sale</span>
             </Tab>
             <Tab>
               <span className="lg:px-6 lg:py-3">Rent</span>
@@ -29,10 +33,10 @@ const CartSection = () => {
             <AllCart />
           </TabPanel>
           <TabPanel>
-            <Rent />
+            <Sell />
           </TabPanel>
           <TabPanel>
-            <Sell />
+            <Rent />
           </TabPanel>
         </Tabs>
       </div>
