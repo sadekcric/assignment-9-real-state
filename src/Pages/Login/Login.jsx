@@ -1,11 +1,14 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { CommonContext } from "../../Route/CommonRoute";
+import { FaRegEye } from "react-icons/fa";
+import { FaRegEyeSlash } from "react-icons/fa";
 
 const Login = () => {
   const { firebaseLogin, loader } = useContext(CommonContext);
   const location = useLocation();
   const navigate = useNavigate();
+  const [hidden, setHidden] = useState(false);
 
   if (loader) {
     return (
@@ -24,9 +27,15 @@ const Login = () => {
       .catch((err) => console.log(err));
   };
 
+  // Password Visibility
+
+  const passwordVisibility = () => {
+    setHidden(!hidden);
+  };
+
   return (
-    <div className="bg-green-50 min-h-[calc(100vh-240px)] flex items-center justify-center">
-      <div className="w-full max-w-md p-8 space-y-3 rounded-xl dark:bg-gray-50 dark:text-gray-800 bg-green-200 border border-green-500 ">
+    <div className="bg-green-50 min-h-[calc(100vh-240px)] flex items-center justify-center ">
+      <div className="w-full max-w-md p-8 space-y-3 rounded-xl dark:bg-gray-50 dark:text-gray-800 bg-green-200 border border-green-500 animate__animated animate__bounceInLeft animate__slow">
         <h1 className="text-2xl font-bold text-center">Sign in</h1>
 
         <form onSubmit={handleSignIn} className="space-y-6">
@@ -42,12 +51,12 @@ const Login = () => {
               className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
             />
           </div>
-          <div className="space-y-1 text-sm">
+          <div className="space-y-1 text-sm relative">
             <label htmlFor="password" className="block dark:text-gray-600">
               Password
             </label>
             <input
-              type="password"
+              type={hidden ? "text" : "password"}
               name="password"
               id="password"
               placeholder="Password"
@@ -57,6 +66,9 @@ const Login = () => {
               <a rel="noopener noreferrer" href="#">
                 Forgot Password?
               </a>
+            </div>
+            <div onClick={passwordVisibility} className="absolute top-9 right-5 text-xl cursor-pointer">
+              {hidden ? <FaRegEye /> : <FaRegEyeSlash />}
             </div>
           </div>
           <button

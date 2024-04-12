@@ -3,15 +3,22 @@ import "react-tabs/style/react-tabs.css";
 import AllCart from "./AllCart";
 import Rent from "./Rent";
 import Sell from "./Sell";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 const CartSection = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   return (
     <div className=" mt-10 lg:mt-24 container mx-auto p-3">
       <div className="text-center space-y-3 mb-5 lg:mb-10">
-        <p className="text-green-500 font-semibold text-sm lg:text-lg animate__animated animate__fadeInDown animate__slow">
+        <p className="text-green-500 font-semibold text-sm lg:text-lg " data-aos="fade-down" data-aos-delay="150" data-aos-duration="1000">
           Our Featured Properties For Sale and Rent
         </p>
-        <h3 className="font-bold text-2xl lg:text-4xl animate__animated animate__fadeInUp animate__slow animate__delay-1s">
+        <h3 data-aos="fade-up" data-aos-delay="150" data-aos-duration="1000" className="font-bold text-2xl lg:text-4xl ">
           Properties For Sale & Rent
         </h3>
       </div>

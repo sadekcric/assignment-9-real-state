@@ -1,6 +1,13 @@
 import { useParams, useLoaderData } from "react-router-dom";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 const Details = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   const item = useLoaderData();
 
   const { id } = useParams();
@@ -13,20 +20,27 @@ const Details = () => {
   return (
     <div className="mt-10">
       <div>
-        <h1 className="text-center font-bold px-5 py-8 bg-green-100 rounded-lg text-3xl lg:text-5xl text-green-500"> View Details </h1>
+        <h1
+          data-aos-duration="3000"
+          data-aos="fade-down"
+          className="text-center font-bold px-5 py-8 bg-green-100 rounded-lg text-3xl lg:text-5xl text-green-500 "
+        >
+          {" "}
+          View Details{" "}
+        </h1>
 
         <div className="container p-3 mt-10 mx-auto">
-          <div className="text-center">
+          <div data-aos-duration="3000" data-aos="fade-down" data-aos-delay="100" className="text-center">
             <img className="w-full h-[350px] object-cover object-center" src={image} alt="" />
           </div>
 
-          <div className="mt-5 space-y-5">
+          <div data-aos="fade-up" data-aos-duration="3000" className="mt-5 space-y-5">
             <h1 className="text-2xl text-center bg-green-50 py-3 lg:text-3xl font-bold">{estate_title}</h1>
 
             <p>{description}</p>
           </div>
 
-          <div className="mt-10">
+          <div data-aos="fade-up" data-aos-duration="3000" className="mt-10">
             <h3 className="font-semibold">Facilities: </h3>
             <ul className="list-disc ml-5">
               <li className=" lg:text-lg">
@@ -37,7 +51,7 @@ const Details = () => {
             </ul>
           </div>
 
-          <div className="overflow-x-scroll lg:overflow-x-auto">
+          <div data-aos="fade-up" data-aos-duration="3000" className="overflow-x-scroll lg:overflow-x-auto">
             <table className="w-full text-center mt-10 border border-green-500 ">
               <thead>
                 <tr className="border-b border-green-500 bg-green-100">
@@ -62,7 +76,7 @@ const Details = () => {
             </table>
           </div>
 
-          <div className="my-10">
+          <div data-aos="fade-up" data-aos-duration="3000" className="my-10">
             <p className="text-xl font-bold underline text-center mb-5">Additional Information:</p>
 
             <ul className="lg:w-1/2 lg:mx-auto text-center">

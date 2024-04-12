@@ -1,11 +1,16 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { CommonContext } from "../../Route/CommonRoute";
 import { updateProfile } from "firebase/auth";
 import toast, { Toaster } from "react-hot-toast";
+import { FaRegEye } from "react-icons/fa";
+import { FaRegEyeSlash } from "react-icons/fa";
 
 const Registration = () => {
   const { firebaseRegister, firebaseLogOut, loader } = useContext(CommonContext);
+  const [hidden1, setHidden1] = useState(false);
+  const [hidden2, setHidden2] = useState(false);
+  const navigate = useNavigate();
 
   if (loader) {
     return (
@@ -13,7 +18,6 @@ const Registration = () => {
     );
   }
 
-  const navigate = useNavigate();
   const handleRegisterForm = (e) => {
     e.preventDefault();
 
@@ -47,7 +51,7 @@ const Registration = () => {
   return (
     <div className="bg-green-50 min-h-[calc(100vh-240px)] flex justify-center items-center p-3">
       <Toaster position="top-center" reverseOrder={false} />
-      <div className="flex flex-col items-center justify-center max-w-md p-6 rounded-md sm:p-10 dark:bg-gray-50 dark:text-gray-800 border border-green-500 my-10 bg-green-200">
+      <div className="flex flex-col items-center justify-center max-w-md p-6 rounded-md sm:p-10 dark:bg-gray-50 dark:text-gray-800 border border-green-500 my-10 bg-green-200 animate__animated animate__bounceInDown animate__slow">
         <div className="mb-8 text-center">
           <h1 className="my-3 text-4xl font-bold">Sign Up</h1>
           <p className="text-sm dark:text-gray-600">Welcome our Website! Please Sign up.</p>
@@ -96,31 +100,38 @@ const Registration = () => {
               />
             </div>
 
-            <div>
+            <div className="relative">
               <label htmlFor="password" className="text-sm">
                 Your Password
               </label>
               <input
-                type="password"
+                type={hidden1 ? "text" : "password"}
                 name="password"
                 id="password"
                 required
                 placeholder="@Abc123"
                 className="w-full px-3 py-2 border rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800"
               />
+              <div onClick={() => setHidden1(!hidden1)} className="absolute top-9 right-5 text-xl cursor-pointer">
+                {hidden1 ? <FaRegEye /> : <FaRegEyeSlash />}
+              </div>
             </div>
-            <div>
+
+            <div className="relative">
               <label htmlFor="password" className="text-sm">
                 Conform Password
               </label>
               <input
-                type="password"
+                type={hidden2 ? "text" : "password"}
                 name="conformPassword"
                 id="conformPassword"
                 placeholder="@Abc123"
                 required
                 className="w-full px-3 py-2 border rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800"
               />
+              <div onClick={() => setHidden2(!hidden2)} className="absolute top-9 right-5 text-xl cursor-pointer">
+                {hidden2 ? <FaRegEye /> : <FaRegEyeSlash />}
+              </div>
             </div>
           </div>
           <div className="space-y-2">
