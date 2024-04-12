@@ -2,10 +2,17 @@ import { useContext, useState } from "react";
 import { FaHome } from "react-icons/fa";
 import { Link, NavLink } from "react-router-dom";
 import { CommonContext } from "../Route/CommonRoute";
+import { Tooltip as ReactTooltip } from "react-tooltip";
 
 const Nav = () => {
   const [hide, setHide] = useState("hidden");
-  const { user, firebaseLogOut } = useContext(CommonContext);
+  const { user, firebaseLogOut, loader } = useContext(CommonContext);
+
+  if (loader) {
+    return (
+      <div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin dark:border-violet-600 z-10 border-green-500 fixed top-[50%] left-[50%]"></div>
+    );
+  }
 
   const handleResponsive = () => {
     if (hide === "hidden") {
@@ -89,19 +96,26 @@ const Nav = () => {
           {navLink}
         </ul>
 
-        <div className="items-center flex-shrink-0 hidden lg:flex">
+        <div className="items-center flex-shrink-0 hidden lg:flex relative">
           {/* Condition */}
           {user ? (
             <div className="flex items-center gap-1">
               <div className="w-12 h-12 rounded-full bg-slate-100">
-                <img src="w-full" alt="" />
+                <img
+                  src={user.photoURL}
+                  className="w-full h-full object-cover object-center rounded-full"
+                  alt=""
+                  data-tooltip-id="my-tooltip-1"
+                />
+                <ReactTooltip id="my-tooltip-1" place="left" content={user.displayName} />
               </div>
+
               <button onClick={() => firebaseLogOut()} className="self-center px-8 py-3 rounded font-semibold">
                 Sign out
               </button>
             </div>
           ) : (
-            <Link to="/login" className="self-center px-8 py-3 rounded font-semibold">
+            <Link to="/login" className="self-center px-8 py-3 rounded font-semibold ">
               Sign in
             </Link>
           )}

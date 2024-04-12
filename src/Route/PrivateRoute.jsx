@@ -1,15 +1,23 @@
 import { useContext } from "react";
 import { CommonContext } from "./CommonRoute";
-import { Navigate } from "react-router-dom";
+import { Navigate, useLocation } from "react-router-dom";
 import PropTypes from "prop-types";
 
 const PrivateRoute = ({ children }) => {
-  const { user } = useContext(CommonContext);
+  const { user, loader } = useContext(CommonContext);
+  const location = useLocation();
+  console.log(location);
+
+  if (loader) {
+    return (
+      <div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin dark:border-violet-600 z-10 border-green-500 fixed top-[50%] left-[50%]"></div>
+    );
+  }
 
   if (user) {
     return <>{children}</>;
   }
-  return <Navigate to="/login"></Navigate>;
+  return <Navigate state={location.pathname} to="/login"></Navigate>;
 };
 
 export default PrivateRoute;

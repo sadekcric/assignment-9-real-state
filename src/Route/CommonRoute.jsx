@@ -29,13 +29,15 @@ const CommonRoute = ({ children }) => {
 
   // Firebase Logout
   const firebaseLogOut = () => {
+    setLoader(true);
     return signOut(auth);
   };
 
   // Firebase AuthChange
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      return setUser(currentUser);
+      setUser(currentUser);
+      setLoader(false);
     });
 
     return () => unsubscribe();

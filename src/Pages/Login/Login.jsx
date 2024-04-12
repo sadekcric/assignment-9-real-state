@@ -1,16 +1,26 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { CommonContext } from "../../Route/CommonRoute";
 
 const Login = () => {
-  const { firebaseLogin } = useContext(CommonContext);
+  const { firebaseLogin, loader } = useContext(CommonContext);
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  if (loader) {
+    return (
+      <div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin dark:border-violet-600 z-10 border-green-500 fixed top-[50%] left-[50%]"></div>
+    );
+  }
 
   const handleSignIn = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
     firebaseLogin(email, password)
-      .then()
+      .then(() => {
+        navigate(location?.state ? location.state : "/");
+      })
       .catch((err) => console.log(err));
   };
 

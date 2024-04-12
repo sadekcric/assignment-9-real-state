@@ -5,7 +5,13 @@ import { updateProfile } from "firebase/auth";
 import toast, { Toaster } from "react-hot-toast";
 
 const Registration = () => {
-  const { firebaseRegister, firebaseLogOut } = useContext(CommonContext);
+  const { firebaseRegister, firebaseLogOut, loader } = useContext(CommonContext);
+
+  if (loader) {
+    return (
+      <div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin dark:border-violet-600 z-10 border-green-500 fixed top-[50%] left-[50%]"></div>
+    );
+  }
 
   const navigate = useNavigate();
   const handleRegisterForm = (e) => {
@@ -29,8 +35,8 @@ const Registration = () => {
         })
           .then(() => {
             firebaseLogOut();
-            e.target.reset;
             navigate("/login");
+            e.target.reset;
           })
           .catch((error) => {
             console.log(error.message);
