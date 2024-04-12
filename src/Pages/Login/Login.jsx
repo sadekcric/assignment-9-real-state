@@ -1,18 +1,34 @@
+import { useContext } from "react";
+import { Link } from "react-router-dom";
+import { CommonContext } from "../../Route/CommonRoute";
+
 const Login = () => {
+  const { firebaseLogin } = useContext(CommonContext);
+
+  const handleSignIn = (e) => {
+    e.preventDefault();
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+    firebaseLogin(email, password)
+      .then()
+      .catch((err) => console.log(err));
+  };
+
   return (
-    <div className="bg-green-50 ">
+    <div className="bg-green-50 min-h-[calc(100vh-240px)] flex items-center justify-center">
       <div className="w-full max-w-md p-8 space-y-3 rounded-xl dark:bg-gray-50 dark:text-gray-800 bg-green-200 border border-green-500 ">
-        <h1 className="text-2xl font-bold text-center">Login</h1>
-        <form noValidate="" action="" className="space-y-6">
+        <h1 className="text-2xl font-bold text-center">Sign in</h1>
+
+        <form onSubmit={handleSignIn} className="space-y-6">
           <div className="space-y-1 text-sm">
             <label htmlFor="username" className="block dark:text-gray-600">
-              Username
+              Email
             </label>
             <input
-              type="text"
-              name="username"
-              id="username"
-              placeholder="Username"
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Email"
               className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
             />
           </div>
@@ -33,13 +49,21 @@ const Login = () => {
               </a>
             </div>
           </div>
-          <button className="block w-full p-3 text-center rounded-sm dark:text-gray-50 dark:bg-violet-600">Sign in</button>
+          <button
+            type="submit"
+            className="block w-full p-3 text-center dark:text-gray-50 dark:bg-violet-600 bg-green-500 text-white rounded-lg"
+          >
+            Sign in
+          </button>
         </form>
+
+        {/* Social Media Login sites */}
         <div className="flex items-center pt-4 space-x-1">
           <div className="flex-1 h-px sm:w-16 dark:bg-gray-300"></div>
           <p className="px-3 text-sm dark:text-gray-600">Login with social accounts</p>
           <div className="flex-1 h-px sm:w-16 dark:bg-gray-300"></div>
         </div>
+
         <div className="flex justify-center space-x-4">
           <button aria-label="Log in with Google" className="p-3 rounded-sm">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" className="w-5 h-5 fill-current">
@@ -59,9 +83,9 @@ const Login = () => {
         </div>
         <p className="text-xs text-center sm:px-6 dark:text-gray-600">
           Don't have an account?
-          <a rel="noopener noreferrer" href="#" className="underline dark:text-gray-800">
+          <Link to="/register" rel="noopener noreferrer" className="underline font-semibold dark:text-gray-800 ml-3 text-blue-500">
             Sign up
-          </a>
+          </Link>
         </p>
       </div>
     </div>

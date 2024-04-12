@@ -1,17 +1,25 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { CommonContext } from "../../Route/CommonRoute";
 import { updateProfile } from "firebase/auth";
+import toast, { Toaster } from "react-hot-toast";
 
 const Registration = () => {
-  const { firebaseRegister, setUser } = useContext(CommonContext);
+  const { firebaseRegister, firebaseLogOut } = useContext(CommonContext);
+
+  const navigate = useNavigate();
   const handleRegisterForm = (e) => {
     e.preventDefault();
+
     const name = e.target.name.value;
     const email = e.target.email.value;
     const image = e.target.image.value;
     const password = e.target.password.value;
     const conformPassword = e.target.conformPassword.value;
+
+    if (password !== conformPassword) {
+      return toast.error("Password Not match!");
+    }
 
     firebaseRegister(email, password)
       .then((res) => {
@@ -19,7 +27,11 @@ const Registration = () => {
           displayName: name,
           photoURL: image,
         })
-          .then()
+          .then(() => {
+            firebaseLogOut();
+            e.target.reset;
+            navigate("/login");
+          })
           .catch((error) => {
             console.log(error.message);
           });
@@ -28,6 +40,7 @@ const Registration = () => {
   };
   return (
     <div className="bg-green-50 min-h-[calc(100vh-240px)] flex justify-center items-center p-3">
+      <Toaster position="top-center" reverseOrder={false} />
       <div className="flex flex-col items-center justify-center max-w-md p-6 rounded-md sm:p-10 dark:bg-gray-50 dark:text-gray-800 border border-green-500 my-10 bg-green-200">
         <div className="mb-8 text-center">
           <h1 className="my-3 text-4xl font-bold">Sign Up</h1>

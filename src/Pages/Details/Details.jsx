@@ -1,14 +1,10 @@
-import { Link } from "react-router-dom";
-import demo from "../../assets/slider1.jpg";
-import { useParams } from "react-router-dom";
-import { useContext } from "react";
-import { CommonContext } from "../../Route/CommonRoute";
+import { useParams, useLoaderData } from "react-router-dom";
 
 const Details = () => {
-  const { item } = useContext(CommonContext);
+  const item = useLoaderData();
+
   const { id } = useParams();
   const int = parseInt(id);
-  console.log(item);
 
   const findItem = item.find((i) => i.id === int);
 

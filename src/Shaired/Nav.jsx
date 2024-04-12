@@ -1,9 +1,11 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { FaHome } from "react-icons/fa";
 import { Link, NavLink } from "react-router-dom";
+import { CommonContext } from "../Route/CommonRoute";
 
 const Nav = () => {
   const [hide, setHide] = useState("hidden");
+  const { user, firebaseLogOut } = useContext(CommonContext);
 
   const handleResponsive = () => {
     if (hide === "hidden") {
@@ -88,9 +90,21 @@ const Nav = () => {
         </ul>
 
         <div className="items-center flex-shrink-0 hidden lg:flex">
-          <Link to="/login" className="self-center px-8 py-3 rounded font-semibold">
-            Sign in
-          </Link>
+          {/* Condition */}
+          {user ? (
+            <div className="flex items-center gap-1">
+              <div className="w-12 h-12 rounded-full bg-slate-100">
+                <img src="w-full" alt="" />
+              </div>
+              <button onClick={() => firebaseLogOut()} className="self-center px-8 py-3 rounded font-semibold">
+                Sign out
+              </button>
+            </div>
+          ) : (
+            <Link to="/login" className="self-center px-8 py-3 rounded font-semibold">
+              Sign in
+            </Link>
+          )}
         </div>
 
         <button onClick={handleResponsive} className="p-4 lg:hidden">
