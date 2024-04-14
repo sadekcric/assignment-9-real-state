@@ -54,18 +54,27 @@ const Nav = () => {
       </li>
 
       {/* for Mobile */}
-      <li className="lg:hidden">
-        <NavLink
-          to="/login"
-          className={({ isActive }) =>
-            isActive
-              ? "py-3 flex items-center px-6 -mb-1 bg-green-500 rounded-md dark:border- dark:text-violet-600 dark:border-violet-600 transition"
-              : "flex items-center py-3 px-6 -mb-1 border-b-2 border-green-500 dark:border- dark:text-violet-600 dark:border-violet-600 transition"
-          }
-        >
-          Sign in
-        </NavLink>
-      </li>
+
+      {user ? (
+        <li className="lg:hidden">
+          <button onClick={() => firebaseLogOut()} className="self-center px-8 py-3 rounded font-semibold">
+            Sign out
+          </button>
+        </li>
+      ) : (
+        <li className="lg:hidden">
+          <NavLink
+            to="/login"
+            className={({ isActive }) =>
+              isActive
+                ? "py-3 flex items-center px-6 -mb-1 bg-green-500 rounded-md dark:border- dark:text-violet-600 dark:border-violet-600 transition"
+                : "flex items-center py-3 px-6 -mb-1 border-b-2 border-green-500 dark:border- dark:text-violet-600 dark:border-violet-600 transition"
+            }
+          >
+            Sign in
+          </NavLink>
+        </li>
+      )}
     </>
   );
 
@@ -121,17 +130,31 @@ const Nav = () => {
           )}
         </div>
 
-        <button onClick={handleResponsive} className="p-4 lg:hidden">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            className="w-6 h-6 dark:text-gray-800"
-          >
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path>
-          </svg>
-        </button>
+        <div className="flex items-center lg:hidden">
+          {user && (
+            <div className="w-8 h-8 rounded-full bg-slate-100">
+              <img
+                src={user.photoURL}
+                className="w-full h-full object-cover object-center rounded-full"
+                alt=""
+                data-tooltip-id="my-tooltip-1"
+              />
+              <ReactTooltip id="my-tooltip-1" place="left" content={user.displayName} />
+            </div>
+          )}
+
+          <button onClick={handleResponsive} className="p-4 lg:hidden">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              className="w-6 h-6 dark:text-gray-800"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
       </div>
     </header>
   );

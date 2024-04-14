@@ -5,6 +5,7 @@ import { updateProfile } from "firebase/auth";
 import toast, { Toaster } from "react-hot-toast";
 import { FaRegEye } from "react-icons/fa";
 import { FaRegEyeSlash } from "react-icons/fa";
+import { Helmet } from "react-helmet-async";
 
 const Registration = () => {
   const { firebaseRegister, firebaseLogOut, loader } = useContext(CommonContext);
@@ -25,10 +26,15 @@ const Registration = () => {
     const email = e.target.email.value;
     const image = e.target.image.value;
     const password = e.target.password.value;
+    console.log(typeof strNumber);
+
     const conformPassword = e.target.conformPassword.value;
 
     if (password !== conformPassword) {
       return toast.error("Password Not match!");
+    }
+    if (password.length < 8) {
+      return toast.error("At least 8 correcter is needed !");
     }
 
     firebaseRegister(email, password)
@@ -50,6 +56,9 @@ const Registration = () => {
   };
   return (
     <div className="bg-green-50 min-h-[calc(100vh-240px)] flex justify-center items-center p-3">
+      <Helmet>
+        <title>Homely Haven | Register</title>
+      </Helmet>
       <Toaster position="top-center" reverseOrder={false} />
       <div className="flex flex-col items-center justify-center max-w-md p-6 rounded-md sm:p-10 dark:bg-gray-50 dark:text-gray-800 border border-green-500 my-10 bg-green-200 animate__animated animate__bounceInDown animate__slow">
         <div className="mb-8 text-center">
@@ -59,7 +68,7 @@ const Registration = () => {
         <form onSubmit={handleRegisterForm} className="space-y-12">
           <div className="space-y-4">
             <div>
-              <label htmlFor="email" className="block mb-2 text-sm">
+              <label htmlFor="name" className="block mb-2 text-sm">
                 Your Name
               </label>
               <input

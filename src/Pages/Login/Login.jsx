@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { CommonContext } from "../../Route/CommonRoute";
 import { FaRegEye } from "react-icons/fa";
 import { FaRegEyeSlash } from "react-icons/fa";
+import { Helmet } from "react-helmet-async";
 
 const Login = () => {
   const { firebaseLogin, loader } = useContext(CommonContext);
@@ -35,6 +36,9 @@ const Login = () => {
 
   return (
     <div className="bg-green-50 min-h-[calc(100vh-240px)] flex items-center justify-center ">
+      <Helmet>
+        <title>Homely Haven | Login</title>
+      </Helmet>
       <div className="w-full max-w-md p-8 space-y-3 rounded-xl dark:bg-gray-50 dark:text-gray-800 bg-green-200 border border-green-500 animate__animated animate__bounceInLeft animate__slow">
         <h1 className="text-2xl font-bold text-center">Sign in</h1>
 

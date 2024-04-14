@@ -2,6 +2,7 @@ import { useParams, useLoaderData } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 
 const Details = () => {
   useEffect(() => {
@@ -19,6 +20,9 @@ const Details = () => {
 
   return (
     <div className="mt-10">
+      <Helmet>
+        <title>Homely Haven | Details</title>
+      </Helmet>
       <div>
         <h1
           data-aos-duration="3000"
