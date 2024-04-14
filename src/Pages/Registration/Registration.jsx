@@ -33,8 +33,12 @@ const Registration = () => {
     if (password !== conformPassword) {
       return toast.error("Password Not match!");
     }
-    if (password.length < 8) {
-      return toast.error("At least 8 correcter is needed !");
+    if (password.length < 6) {
+      return toast.error("Password must be up to 6 correcter !");
+    }
+
+    if (!/[A-Z]/.test(password) || !/[a-z]/.test(password)) {
+      return toast.error("Password must be a Uppercase & Lowercase!");
     }
 
     firebaseRegister(email, password)
