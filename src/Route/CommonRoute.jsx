@@ -8,6 +8,7 @@ const CommonRoute = ({ children }) => {
   const [item, setItem] = useState([]);
   const [user, setUser] = useState({});
   const [loader, setLoader] = useState(true);
+  const [edit, setEdit] = useState(false);
 
   useEffect(() => {
     fetch("/Data.json")
@@ -41,10 +42,10 @@ const CommonRoute = ({ children }) => {
     });
 
     return () => unsubscribe();
-  }, []);
+  }, [edit]);
 
   // pass Item
-  const info = { item, firebaseRegister, setUser, firebaseLogin, user, firebaseLogOut, loader };
+  const info = { item, firebaseRegister, setUser, firebaseLogin, user, firebaseLogOut, loader, setLoader, edit, setEdit };
 
   return <CommonContext.Provider value={info}>{children}</CommonContext.Provider>;
 };

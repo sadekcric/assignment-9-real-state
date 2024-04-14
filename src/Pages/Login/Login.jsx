@@ -4,9 +4,10 @@ import { CommonContext } from "../../Route/CommonRoute";
 import { FaRegEye } from "react-icons/fa";
 import { FaRegEyeSlash } from "react-icons/fa";
 import { Helmet } from "react-helmet-async";
+import toast, { Toaster } from "react-hot-toast";
 
 const Login = () => {
-  const { firebaseLogin, loader } = useContext(CommonContext);
+  const { firebaseLogin, loader, setLoader } = useContext(CommonContext);
   const location = useLocation();
   const navigate = useNavigate();
   const [hidden, setHidden] = useState(false);
@@ -24,8 +25,12 @@ const Login = () => {
     firebaseLogin(email, password)
       .then(() => {
         navigate(location?.state ? location.state : "/");
+        toast.success("Successfully Login!");
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        alert(err.message);
+        setLoader(false);
+      });
   };
 
   // Password Visibility
@@ -36,6 +41,7 @@ const Login = () => {
 
   return (
     <div className="bg-green-50 min-h-[calc(100vh-240px)] flex items-center justify-center ">
+      <Toaster position="top-right" reverseOrder={false} />
       <Helmet>
         <title>Homely Haven | Login</title>
       </Helmet>

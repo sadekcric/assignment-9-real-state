@@ -3,10 +3,11 @@ import { Helmet } from "react-helmet-async";
 import { CommonContext } from "../../Route/CommonRoute";
 import { updateProfile } from "firebase/auth";
 import auth from "../../firebase/firebase.config";
+import toast, { Toaster } from "react-hot-toast";
 
 const UpdateProfile = () => {
-  const { user } = useContext(CommonContext);
-  const [edit, setEdit] = useState(false);
+  const { user, edit, setEdit } = useContext(CommonContext);
+
   const [name, setName] = useState(user.displayName);
   const [img, setImg] = useState(user.photoURL);
 
@@ -22,10 +23,11 @@ const UpdateProfile = () => {
       displayName: name,
       photoURL: img,
     })
-      .then()
+      .then(() => {
+        setEdit(!edit);
+        toast.success("Edit Successful!");
+      })
       .catch((err) => console.log(err.message));
-
-    setEdit(!edit);
   };
 
   return (
@@ -33,6 +35,7 @@ const UpdateProfile = () => {
       <Helmet>
         <title>Homely Haven | Update-profile</title>
       </Helmet>
+      <Toaster position="top-center" reverseOrder={false} />
       <div className="flex items-center justify-center min-h-[calc(100vh-240px)]">
         <div className="max-w-xs p-6 rounded-md shadow-md dark:bg-gray-50 dark:text-gray-900">
           {edit ? (
