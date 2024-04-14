@@ -41,10 +41,12 @@ const CommonRoute = ({ children }) => {
   // Google Login
 
   const googleLogin = () => {
+    setLoader(true);
     return signInWithPopup(auth, provider);
   };
 
   const githubLogin = () => {
+    setLoader(true);
     return signInWithPopup(auth, gitProvider);
   };
 
