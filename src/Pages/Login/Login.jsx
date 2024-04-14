@@ -20,12 +20,26 @@ const Login = () => {
 
   const handleGoogleLogin = () => {
     googleLogin()
-      .then()
-      .catch((e) => console.error(e));
+      .then(() => {
+        navigate(location?.state ? location.state : "/");
+        toast.success("Successfully Login!");
+      })
+      .catch((err) => {
+        alert(err.message);
+        setLoader(false);
+      });
   };
 
   const handleGithub = () => {
-    githubLogin().then().catch();
+    githubLogin()
+      .then(() => {
+        navigate(location?.state ? location.state : "/");
+        toast.success("Successfully Login!");
+      })
+      .catch((err) => {
+        alert(err.message);
+        setLoader(false);
+      });
   };
 
   const handleSignIn = (e) => {
