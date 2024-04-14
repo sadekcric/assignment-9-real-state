@@ -1,6 +1,14 @@
 import { createContext, useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut } from "firebase/auth";
+import {
+  GithubAuthProvider,
+  GoogleAuthProvider,
+  createUserWithEmailAndPassword,
+  onAuthStateChanged,
+  signInWithEmailAndPassword,
+  signInWithPopup,
+  signOut,
+} from "firebase/auth";
 import auth from "../firebase/firebase.config";
 
 export const CommonContext = createContext(null);
@@ -9,6 +17,8 @@ const CommonRoute = ({ children }) => {
   const [user, setUser] = useState({});
   const [loader, setLoader] = useState(true);
   const [edit, setEdit] = useState(false);
+  const provider = new GoogleAuthProvider();
+  const gitProvider = new GithubAuthProvider();
 
   useEffect(() => {
     fetch("/Data.json")
@@ -28,6 +38,16 @@ const CommonRoute = ({ children }) => {
     return signInWithEmailAndPassword(auth, email, password);
   };
 
+  // Google Login
+
+  const googleLogin = () => {
+    return signInWithPopup(auth, provider);
+  };
+
+  const githubLogin = () => {
+    return signInWithPopup(auth, gitProvider);
+  };
+
   // Firebase Logout
   const firebaseLogOut = () => {
     setLoader(true);
@@ -42,10 +62,23 @@ const CommonRoute = ({ children }) => {
     });
 
     return () => unsubscribe();
-  }, [edit]);
+  }, [edit, user]);
 
   // pass Item
-  const info = { item, firebaseRegister, setUser, firebaseLogin, user, firebaseLogOut, loader, setLoader, edit, setEdit };
+  const info = {
+    item,
+    firebaseRegister,
+    setUser,
+    firebaseLogin,
+    user,
+    firebaseLogOut,
+    loader,
+    setLoader,
+    edit,
+    setEdit,
+    googleLogin,
+    githubLogin,
+  };
 
   return <CommonContext.Provider value={info}>{children}</CommonContext.Provider>;
 };

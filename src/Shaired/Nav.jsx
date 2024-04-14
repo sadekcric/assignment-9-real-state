@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { FaHome } from "react-icons/fa";
+import { FaHome, FaRegUserCircle } from "react-icons/fa";
 import { Link, NavLink } from "react-router-dom";
 import { CommonContext } from "../Route/CommonRoute";
 import { Tooltip as ReactTooltip } from "react-tooltip";
@@ -133,12 +133,16 @@ const Nav = () => {
         <div className="flex items-center lg:hidden">
           {user && (
             <div className="w-8 h-8 rounded-full bg-slate-100">
-              <img
-                src={user.photoURL}
-                className="w-full h-full object-cover object-center rounded-full"
-                alt=""
-                data-tooltip-id="my-tooltip-1"
-              />
+              {user?.photoURL ? (
+                <img
+                  src={user.photoURL}
+                  className="w-full h-full object-cover object-center rounded-full"
+                  alt=""
+                  data-tooltip-id="my-tooltip-1"
+                />
+              ) : (
+                <FaRegUserCircle />
+              )}
               <ReactTooltip id="my-tooltip-1" place="left" content={user.displayName} />
             </div>
           )}
