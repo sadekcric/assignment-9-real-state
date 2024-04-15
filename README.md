@@ -1,8 +1,29 @@
-# React + Vite
+# Homely Haven
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to Homely Haven, your ultimate destination for residential living solutions. Visit our live site at [Website](https://singular-canvas.web.app/).
 
-Currently, two official plugins are available:
+## Features and Characteristics
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Beautiful Residential Living**: Experience the beauty and comfort of residential living like never before with Homely Haven.
+- **Seamless Navigation**: Our website provides easy and intuitive navigation, ensuring you find what you need with minimal effort.
+- **Interactive Swiper Slider**: Engage with stunning visuals and content through our interactive Swiper Slider, enhancing your browsing experience.
+- **iOS-inspired Animations**: Enjoy smooth and elegant animations inspired by iOS design principles, adding a touch of sophistication to your interaction with our website.
+- **Responsive Design**: Homely Haven is designed to look and perform flawlessly across all devices, ensuring a consistent experience whether you're browsing on a desktop, tablet, or smartphone.
+
+## NPM Packages Used
+
+- Animation.css
+- Swiper Slider
+- iOS Animation
+- React Router
+- React Icon
+- Prototype
+- React Tabs
+- Firebase
+- SweetAlert2
+- React Tooltip
+- React Helmet
+
+## Challenges Task NPM Package
+
+The npm package used for the challenges task is `animation.css`.
