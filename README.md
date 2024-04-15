@@ -1,6 +1,6 @@
 # Homely Haven
 
-Welcome to Homely Haven, your ultimate destination for residential living solutions. Visit our live site at [Website](https://singular-canvas.web.app/).
+Welcome to [Homely Haven](https://singular-canvas.web.app/), your ultimate destination for residential living solutions. Visit our live site at [www.homelyhaven.com](https://singular-canvas.web.app/).
 
 ## Features and Characteristics
 
