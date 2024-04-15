@@ -12,17 +12,17 @@ Welcome to [Homely Haven](https://singular-canvas.web.app/), your ultimate desti
 
 ## NPM Packages Used
 
-- Animation.css
-- Swiper Slider
-- iOS Animation
-- React Router
-- React Icon
-- Prototype
-- React Tabs
-- Firebase
-- SweetAlert2
-- React Tooltip
-- React Helmet
+- [Animation.css](https://animate.style/)
+- [Swiper Slider](https://swiperjs.com/)
+- [iOS Animation](https://www.npmjs.com/package/aos)
+- [React Router](https://reactrouter.com/en/main)
+- [React Icon](https://react-icons.github.io/react-icons/)
+- [PropTypes](https://www.npmjs.com/package/prop-types)
+- [React Tabs](https://www.npmjs.com/package/react-tabs)
+- [Firebase](https://firebase.google.com/?gad_source=1&gclid=CjwKCAjwoPOwBhAeEiwAJuXRh7m9TJ4lPoikML487K4lpr5rEpFNqwtMkmzf8PaTi2BALUX6ofAUdRoC8PUQAvD_BwE&gclsrc=aw.ds)
+- [SweetAlert2](https://sweetalert2.github.io/)
+- [React Tooltip](https://www.npmjs.com/package/react-tooltip)
+- [React Helmet async](https://www.npmjs.com/package/react-helmet-async)
 
 ## Challenges Task NPM Package
 
