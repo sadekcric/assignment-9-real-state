@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet-async";
 import { CommonContext } from "../../Route/CommonRoute";
 import { updateProfile } from "firebase/auth";
 import auth from "../../firebase/firebase.config";
-import toast, { Toaster } from "react-hot-toast";
+import Swal from "sweetalert2";
 
 const UpdateProfile = () => {
   const { user, edit, setEdit } = useContext(CommonContext);
@@ -25,9 +25,21 @@ const UpdateProfile = () => {
     })
       .then(() => {
         setEdit(!edit);
-        toast.success("Edit Successful!");
+        Swal.fire({
+          icon: "success",
+          title: "Successfully Edit!",
+          showConfirmButton: false,
+          timer: 1500,
+        });
       })
-      .catch((err) => console.log(err.message));
+      .catch((err) => {
+        return Swal.fire({
+          title: "Error!",
+          text: err.message,
+          icon: "error",
+          confirmButtonText: "Back",
+        });
+      });
   };
 
   return (
@@ -35,7 +47,6 @@ const UpdateProfile = () => {
       <Helmet>
         <title>Homely Haven | Update-profile</title>
       </Helmet>
-      <Toaster position="top-center" reverseOrder={false} />
       <div className="flex items-center justify-center min-h-[calc(100vh-240px)]">
         <div className="max-w-xs p-6 rounded-md shadow-md dark:bg-gray-50 dark:text-gray-900">
           {edit ? (

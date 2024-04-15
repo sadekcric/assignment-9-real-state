@@ -4,7 +4,7 @@ import { CommonContext } from "../../Route/CommonRoute";
 import { FaRegEye } from "react-icons/fa";
 import { FaRegEyeSlash } from "react-icons/fa";
 import { Helmet } from "react-helmet-async";
-import toast, { Toaster } from "react-hot-toast";
+import Swal from "sweetalert2";
 
 const Login = () => {
   const { firebaseLogin, loader, setLoader, googleLogin, githubLogin } = useContext(CommonContext);
@@ -22,23 +22,45 @@ const Login = () => {
     googleLogin()
       .then(() => {
         navigate(location?.state ? location.state : "/");
-        toast.success("Successfully Login!");
+
+        Swal.fire({
+          icon: "success",
+          title: "Successfully Login!",
+          showConfirmButton: false,
+          timer: 1500,
+        });
       })
       .catch((err) => {
-        alert(err.message);
         setLoader(false);
+        return Swal.fire({
+          title: "Error!",
+          text: err.message,
+          icon: "error",
+          confirmButtonText: "Back",
+        });
       });
   };
 
   const handleGithub = () => {
     githubLogin()
       .then(() => {
+        Swal.fire({
+          icon: "success",
+          title: "Successfully Login!",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+
         navigate(location?.state ? location.state : "/");
-        toast.success("Successfully Login!");
       })
       .catch((err) => {
-        alert(err.message);
         setLoader(false);
+        return Swal.fire({
+          title: "Error!",
+          text: err.message,
+          icon: "error",
+          confirmButtonText: "Back",
+        });
       });
   };
 
@@ -48,12 +70,24 @@ const Login = () => {
     const password = e.target.password.value;
     firebaseLogin(email, password)
       .then(() => {
+        Swal.fire({
+          icon: "success",
+          title: "Successfully Login!",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+
         navigate(location?.state ? location.state : "/");
-        toast.success("Successfully Login!");
       })
       .catch((err) => {
-        alert(err.message);
         setLoader(false);
+
+        return Swal.fire({
+          title: "Error!",
+          text: err.message,
+          icon: "error",
+          confirmButtonText: "Back",
+        });
       });
   };
 
@@ -65,7 +99,6 @@ const Login = () => {
 
   return (
     <div className="bg-green-50 min-h-[calc(100vh-240px)] flex items-center justify-center ">
-      <Toaster position="top-right" reverseOrder={false} />
       <Helmet>
         <title>Homely Haven | Login</title>
       </Helmet>

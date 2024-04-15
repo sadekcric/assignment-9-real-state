@@ -18,8 +18,8 @@ const CartSection = () => {
         <p className="text-green-500 font-semibold text-sm lg:text-lg " data-aos="fade-down" data-aos-delay="150" data-aos-duration="1000">
           Our Featured Properties For Sale and Rent
         </p>
-        <h3 data-aos="fade-up" data-aos-delay="150" data-aos-duration="1000" className="font-bold text-2xl lg:text-4xl ">
-          Properties For Sale & Rent
+        <h3 data-aos="fade-up" data-aos-delay="150" data-aos-duration="1000" className="font-bold text-3xl lg:text-5xl ">
+          Estates
         </h3>
       </div>
       <div className="text-xl font-semibold">

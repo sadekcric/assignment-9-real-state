@@ -2,11 +2,12 @@ import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { CommonContext } from "../../Route/CommonRoute";
 import { updateProfile } from "firebase/auth";
-import toast, { Toaster } from "react-hot-toast";
 import { FaRegEye } from "react-icons/fa";
 import { FaRegEyeSlash } from "react-icons/fa";
 import { Helmet } from "react-helmet-async";
 import "react-toastify/dist/ReactToastify.css";
+
+import Swal from "sweetalert2";
 
 const Registration = () => {
   const { firebaseRegister, loader, setLoader, firebaseLogOut } = useContext(CommonContext);
@@ -31,14 +32,31 @@ const Registration = () => {
     const conformPassword = e.target.conformPassword.value;
 
     if (password !== conformPassword) {
-      return toast.error("Password Not match!");
+      return Swal.fire({
+        title: "Error!",
+        text: "Password Not match!",
+        icon: "error",
+        confirmButtonText: "Back",
+      });
     }
+
     if (password.length < 6) {
-      return toast.error("Password must be up to 6 correcter !");
+      return Swal.fire({
+        title: "Error!",
+        text: "Password must be up to 6 correcter!",
+        icon: "error",
+        confirmButtonText: "Back",
+      });
     }
 
     if (!/[A-Z]/.test(password) || !/[a-z]/.test(password)) {
-      return toast.error("Password must be a Uppercase & Lowercase!");
+      // return toast.error("Password must be a Uppercase & Lowercase!");
+      return Swal.fire({
+        title: "Error!",
+        text: "Password must be a Uppercase & Lowercase!",
+        icon: "error",
+        confirmButtonText: "Back",
+      });
     }
 
     firebaseRegister(email, password)
@@ -48,6 +66,12 @@ const Registration = () => {
           photoURL: image,
         })
           .then(() => {
+            Swal.fire({
+              icon: "success",
+              title: "Successfully Registered!",
+              showConfirmButton: false,
+              timer: 1500,
+            });
             firebaseLogOut();
             navigate("/login");
 
@@ -55,18 +79,27 @@ const Registration = () => {
           })
           .catch((error) => {
             setLoader(false);
-            return toast.error(error.message);
+
+            return Swal.fire({
+              title: "Error!",
+              text: error.message,
+              icon: "error",
+              confirmButtonText: "Back",
+            });
           });
       })
       .catch((err) => {
         setLoader(false);
-        return toast.error(err.message);
+        return Swal.fire({
+          title: "Error!",
+          text: err.message,
+          icon: "error",
+          confirmButtonText: "Back",
+        });
       });
   };
   return (
     <>
-      <Toaster position="top-right" reverseOrder={false} />
-
       <div className="bg-green-50 min-h-[calc(100vh-240px)] flex justify-center items-center p-3">
         <Helmet>
           <title>Homely Haven | Register</title>
