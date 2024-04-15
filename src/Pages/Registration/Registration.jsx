@@ -12,7 +12,7 @@ import "aos/dist/aos.css";
 import register from "../../assets/register.png";
 
 const Registration = () => {
-  const { firebaseRegister, loader, setLoader, firebaseLogOut } = useContext(CommonContext);
+  const { firebaseRegister, loader, setLoader, firebaseLogOut, user } = useContext(CommonContext);
   const [hidden1, setHidden1] = useState(false);
   const [hidden2, setHidden2] = useState(false);
   const navigate = useNavigate();
@@ -36,6 +36,15 @@ const Registration = () => {
     const password = e.target.password.value;
 
     const conformPassword = e.target.conformPassword.value;
+
+    if (user) {
+      return Swal.fire({
+        title: "Error!",
+        text: "You are Already Log in. For new Register Please Sign out.",
+        icon: "error",
+        confirmButtonText: "Back",
+      });
+    }
 
     if (password !== conformPassword) {
       return Swal.fire({
@@ -104,6 +113,7 @@ const Registration = () => {
         });
       });
   };
+
   return (
     <div className="bg-green-50 p-3">
       <Helmet>

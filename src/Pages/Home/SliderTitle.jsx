@@ -1,6 +1,10 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { CommonContext } from "../../Route/CommonRoute";
+import Swal from "sweetalert2";
 
 const SliderTitle = () => {
+  const { user } = useContext(CommonContext);
   return (
     <div className="container mx-auto p-3 flex flex-col lg:flex-row lg:gap-6 items-start">
       <div className="text-white space-y-3 overflow-hidden lg:space-y-10 lg:flex-1 lg:p-3">

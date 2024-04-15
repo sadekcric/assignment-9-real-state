@@ -10,7 +10,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 const Login = () => {
-  const { firebaseLogin, loader, setLoader, googleLogin, githubLogin } = useContext(CommonContext);
+  const { firebaseLogin, loader, setLoader, googleLogin, githubLogin, user } = useContext(CommonContext);
   const location = useLocation();
   const navigate = useNavigate();
   const [hidden, setHidden] = useState(false);
@@ -26,6 +26,14 @@ const Login = () => {
   }
 
   const handleGoogleLogin = () => {
+    if (user) {
+      return Swal.fire({
+        title: "Error!",
+        text: "You are Already Log in. For new Log in Please Sign out.",
+        icon: "error",
+        confirmButtonText: "Back",
+      });
+    }
     googleLogin()
       .then(() => {
         navigate(location?.state ? location.state : "/");
@@ -49,6 +57,15 @@ const Login = () => {
   };
 
   const handleGithub = () => {
+    if (user) {
+      return Swal.fire({
+        title: "Error!",
+        text: "You are Already Log in. For new Log in Please Sign out.",
+        icon: "error",
+        confirmButtonText: "Back",
+      });
+    }
+
     githubLogin()
       .then(() => {
         Swal.fire({
@@ -73,6 +90,16 @@ const Login = () => {
 
   const handleSignIn = (e) => {
     e.preventDefault();
+
+    if (user) {
+      return Swal.fire({
+        title: "Error!",
+        text: "You are Already Log in. For new Log in Please Sign out.",
+        icon: "error",
+        confirmButtonText: "Back",
+      });
+    }
+
     const email = e.target.email.value;
     const password = e.target.password.value;
     firebaseLogin(email, password)
