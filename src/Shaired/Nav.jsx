@@ -54,7 +54,7 @@ const Nav = () => {
       </li>
 
       {user && (
-        <li>
+        <li className="flex font-semibold">
           <NavLink
             to="/contact"
             className={({ isActive }) =>

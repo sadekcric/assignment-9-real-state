@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Link, NavLink, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { CommonContext } from "../Route/CommonRoute";
 import Swal from "sweetalert2";
 import { Tooltip as ReactTooltip } from "react-tooltip";
@@ -18,32 +18,41 @@ const Footer = () => {
   const navLink = (
     <>
       <li className="flex font-semibold">
-        <NavLink
+        <Link
           rel="noopener noreferrer"
           to="/"
-          className={({ isActive }) =>
-            isActive
-              ? "py-3 flex items-center px-6 -mb-1 bg-green-500 rounded-md dark:border- dark:text-violet-600 dark:border-violet-600 transition"
-              : "flex items-center py-3 px-6 -mb-1 border-b-2 border-green-500 dark:border- dark:text-violet-600 dark:border-violet-600 transition"
+          className={
+            "flex items-center py-3 px-6 -mb-1 border-b-2 border-green-500 dark:border- dark:text-violet-600 dark:border-violet-600 transition"
           }
         >
           Home
-        </NavLink>
+        </Link>
       </li>
 
       <li className="flex font-semibold">
-        <NavLink
+        <Link
           rel="noopener noreferrer"
           to="/updateProfile"
-          className={({ isActive }) =>
-            isActive
-              ? "py-3 flex items-center px-6 -mb-1 bg-green-500 rounded-md dark:border- dark:text-violet-600 dark:border-violet-600 transition"
-              : "flex items-center py-3 px-6 -mb-1 border-b-2 border-green-500 dark:border- dark:text-violet-600 dark:border-violet-600 transition"
+          className={
+            "flex items-center py-3 px-6 -mb-1 border-b-2 border-green-500 dark:border- dark:text-violet-600 dark:border-violet-600 transition"
           }
         >
           Update Profile
-        </NavLink>
+        </Link>
       </li>
+
+      {user && (
+        <li className="flex font-semibold">
+          <Link
+            to="/contact"
+            className={
+              "flex items-center py-3 px-6 -mb-1 border-b-2 border-green-500 dark:border- dark:text-violet-600 dark:border-violet-600 transition"
+            }
+          >
+            Contact Us{" "}
+          </Link>
+        </li>
+      )}
 
       {user ? (
         <li className="flex items-center gap-1">
