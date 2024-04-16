@@ -171,21 +171,53 @@ const Nav = () => {
           )}
         </div>
 
+        {/* for Mobile device */}
+
         <div className="flex items-center lg:hidden">
-          {user && (
-            <div className="w-8 h-8 rounded-full bg-slate-100">
-              {user?.photoURL ? (
+          {user ? (
+            <div className="flex items-center gap-1 relative">
+              <div onClick={() => setProfileActive(!profileActive)} className="w-8 h-8 rounded-full bg-slate-100">
                 <img
-                  src={user.photoURL}
-                  className="w-full h-full object-cover object-center rounded-full"
+                  src={user?.photoURL || defaultProfile}
                   alt=""
+                  className="w-full h-full object-cover object-center rounded-full"
                   data-tooltip-id="my-tooltip-1"
                 />
-              ) : (
-                <FaRegUserCircle />
-              )}
-              <ReactTooltip id="my-tooltip-1" place="left" content={user.displayName} />
+                <ReactTooltip id="my-tooltip-1" place="left" content={user.displayName} />
+              </div>
+
+              {/* User Profile */}
+              <div
+                className={`bg-green-950 min-h-[200px] absolute ${
+                  profileActive ? "translate-y-[255px] opacity-100" : "-translate-y-56 opacity-0"
+                } transition duration-1000 ease-in-out px-10 text-white rounded-b-lg right-0 pb-5`}
+              >
+                <h2 className="text-xl font-semibold text-center border-b-2 border-green-900 mb-3 ">USER</h2>
+                <ul className="space-y-3">
+                  <li>
+                    <img className="w-full h-48" src={user.photoURL} alt="" />
+                  </li>
+                  <li>
+                    <span className="font-semibold">Name: </span> {user.displayName}
+                  </li>
+                  <li>
+                    <span className="font-semibold">Email: </span> {user.email}
+                  </li>
+                  <li>
+                    <button
+                      onClick={() => firebaseLogOut()}
+                      className="self-center w-full border-2 border-green-500 py-3 rounded font-semibold"
+                    >
+                      Sign out
+                    </button>
+                  </li>
+                </ul>
+              </div>
             </div>
+          ) : (
+            <Link to="/login" className="self-center px-8 py-3 rounded font-semibold ">
+              Sign in
+            </Link>
           )}
 
           <button onClick={handleResponsive} className="p-4 lg:hidden">
