@@ -3,6 +3,7 @@ import { FaHome, FaRegUserCircle } from "react-icons/fa";
 import { Link, NavLink } from "react-router-dom";
 import { CommonContext } from "../Route/CommonRoute";
 import { Tooltip as ReactTooltip } from "react-tooltip";
+import defaultProfile from "../assets/defaultProfile.png";
 
 const Nav = () => {
   const [hide, setHide] = useState("hidden");
@@ -126,9 +127,9 @@ const Nav = () => {
             <div className="flex items-center gap-1">
               <div className="w-12 h-12 rounded-full bg-slate-100">
                 <img
-                  src={user.photoURL}
-                  className="w-full h-full object-cover object-center rounded-full"
+                  src={user?.photoURL || defaultProfile}
                   alt=""
+                  className="w-full h-full object-cover object-center rounded-full"
                   data-tooltip-id="my-tooltip-1"
                 />
                 <ReactTooltip id="my-tooltip-1" place="left" content={user.displayName} />

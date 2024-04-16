@@ -24,8 +24,6 @@ const Testimonial = () => {
       .then((data) => setTesCart(data.testimonials));
   }, []);
 
-  console.log(tesCart);
-
   return (
     <div className="mt-10 lg:mt-24 container mx-auto p-3">
       <div className="text-center mb-5 lg:mb-10 ">

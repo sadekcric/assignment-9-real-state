@@ -2,6 +2,7 @@ import { Helmet } from "react-helmet-async";
 import CartSection from "./CartSection";
 import Slider from "./Slider";
 import Testimonial from "./Testimonial/Testimonial";
+import Booking from "../Booking/Booking";
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
 
       <CartSection />
       <Testimonial />
+      <Booking />
     </div>
   );
 };

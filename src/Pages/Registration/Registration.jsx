@@ -85,12 +85,12 @@ const Registration = () => {
               icon: "success",
               title: "Successfully Registered!",
               showConfirmButton: false,
-              timer: 1500,
+              timer: 3000,
             });
             firebaseLogOut();
             navigate("/login");
 
-            e.target.reset;
+            e.target.reset();
           })
           .catch((error) => {
             setLoader(false);
