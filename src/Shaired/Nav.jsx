@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { FaHome, FaRegUserCircle } from "react-icons/fa";
+import { FaHome } from "react-icons/fa";
 import { Link, NavLink } from "react-router-dom";
 import { CommonContext } from "../Route/CommonRoute";
 import { Tooltip as ReactTooltip } from "react-tooltip";
