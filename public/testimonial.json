@@ -1,0 +1,44 @@
+{
+  "testimonials": [
+    {
+      "name": "John Smith",
+      "location": "New York, USA",
+      "comment": "I found my dream home through Homely Haven. Their personalized approach and attention to detail made the entire process smooth and stress-free. Highly recommended!",
+      "rating": 5,
+      "date": "2024-04-16",
+      "profile_picture": "https://i.ibb.co/7JVtQK7/happy-business-woman-pointing-copyspace-171337-8496.jpg"
+    },
+    {
+      "name": "Emma Johnson",
+      "location": "London, UK",
+      "comment": "Homely Haven helped me find the perfect apartment in London. Their team was professional, responsive, and truly understood my requirements. Thank you!",
+      "rating": 4.5,
+      "date": "2024-04-15",
+      "profile_picture": "https://i.ibb.co/QfdcqTP/360-F-417357764-9-M4-EAb-Thf0rel-Vq-Wcrfi54w2-Jcw-H3-RR3.jpg"
+    },
+    {
+      "name": "Michael Chang",
+      "location": "Sydney, Australia",
+      "comment": "I'm so glad I chose Homely Haven for my property search. They went above and beyond to ensure I found exactly what I was looking for. Exceptional service!",
+      "rating": 5,
+      "date": "2024-04-14",
+      "profile_picture": "https://i.ibb.co/B6bSY0D/istockphoto-1034391536-612x612.jpg"
+    },
+    {
+      "name": "Maria Rodriguez",
+      "location": "Los Angeles, USA",
+      "comment": "Homely Haven made selling my house a breeze. Their expertise and marketing strategies exceeded my expectations. I couldn't be happier with the outcome!",
+      "rating": 5,
+      "date": "2024-04-13",
+      "profile_picture": "https://i.ibb.co/vqRj7h7/stock-photo-caucasian-successful-confident-young-businesswoman-ceo-boss-bank-employee-worker-manager.jpg"
+    },
+    {
+      "name": "David Lee",
+      "location": "Toronto, Canada",
+      "comment": "I highly recommend Homely Haven to anyone looking to buy or sell property. Their team is knowledgeable, trustworthy, and always puts the client first.",
+      "rating": 4.8,
+      "date": "2024-04-12",
+      "profile_picture": "https://i.ibb.co/SXNWjMx/istockphoto-937499062-170667a.webp"
+    }
+  ]
+}
