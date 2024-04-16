@@ -24,6 +24,7 @@ Welcome to [Homely Haven](https://singular-canvas.web.app/), your ultimate desti
 - [React Tooltip](https://www.npmjs.com/package/react-tooltip)
 - [React Helmet async](https://www.npmjs.com/package/react-helmet-async)
 - [Moment js](https://momentjs.com/)
+- [React](https://react.dev/)
 
 ## Challenges Task NPM Package
 
