@@ -115,7 +115,7 @@ const Registration = () => {
   };
 
   return (
-    <div className="bg-green-50 p-3">
+    <div className="bg-green-50 p-3 overflow-hidden">
       <Helmet>
         <title>Homely Haven | Register</title>
       </Helmet>

@@ -1,22 +1,22 @@
-import { useContext } from "react";
 import { Link } from "react-router-dom";
-import { CommonContext } from "../../Route/CommonRoute";
-import Swal from "sweetalert2";
 
 const SliderTitle = () => {
-  const { user } = useContext(CommonContext);
   return (
-    <div className="container mx-auto p-3 flex flex-col lg:flex-row lg:gap-6 items-start">
-      <div className="text-white space-y-3 overflow-hidden lg:space-y-10 lg:flex-1 lg:p-3">
-        <h1 className="text-2xl lg:text-5xl font-bold ">
-          <span className="animate__animated animate__fadeInLeft animate__slower block">
-            Welcome <span className="text-green-500 ">Homely Haven</span>
-          </span>{" "}
-          <br />
-          <span className="pt-2 lg:pt-5 block animate__animated animate__fadeInLeft animate__slow ">Where Comfort Meets Elegance.</span>
-        </h1>
+    <div className="container mx-auto p-3 lg:flex lg:flex-row lg:gap-6 lg:items-start text-center lg:text-left">
+      <div className="text-white space-y-8 overflow-hidden lg:space-y-10 lg:flex-1 lg:p-3">
+        <div className="space-y-3">
+          <h1 className="text-2xl lg:text-5xl font-bold ">
+            <span className="animate__animated animate__fadeInLeft animate__slower block">
+              Welcome to <span className="text-green-500 ">Homely Haven,</span>
+            </span>{" "}
+          </h1>
 
-        <p className="lg:text-xl text-gray-200 w-5/6 animate__animated animate__fadeInLeft animate__slower">
+          <h2 className=" block animate__animated animate__fadeInLeft animate__slow text-xl lg:text-4xl font-bold">
+            Where Comfort Meets Elegance.
+          </h2>
+        </div>
+
+        <p className="lg:text-lg text-gray-200 w-5/6 lg:mx-0 mx-auto animate__animated animate__fadeInLeft animate__slower">
           Discover your perfect sanctuary with our curated collection of residential properties. Explore homes designed for comfort, style,
           and modern living. Welcome to your new beginning.
         </p>
