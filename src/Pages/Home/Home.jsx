@@ -5,7 +5,7 @@ import Testimonial from "./Testimonial/Testimonial";
 
 const Home = () => {
   return (
-    <>
+    <div className="overflow-hidden">
       <Helmet>
         <title>Homely Haven | home</title>
       </Helmet>
@@ -13,7 +13,7 @@ const Home = () => {
 
       <CartSection />
       <Testimonial />
-    </>
+    </div>
   );
 };
 
