@@ -3,6 +3,9 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
 import { Helmet } from "react-helmet-async";
+import { MapContainer, Marker, Popup, TileLayer, useMap } from "react-leaflet";
+import "./style.css";
+import "leaflet/dist/leaflet.css";
 
 const Details = () => {
   useEffect(() => {
@@ -16,7 +19,20 @@ const Details = () => {
 
   const findItem = item.find((i) => i.id === int);
 
-  const { image, estate_title, segment_name, description, price, status, area, location, additional_information, facilities } = findItem;
+  const {
+    image,
+    estate_title,
+    segment_name,
+    description,
+    price,
+    status,
+    area,
+    location,
+    additional_information,
+    facilities,
+    latitude,
+    longitude,
+  } = findItem;
 
   return (
     <div className="mt-10">
@@ -73,17 +89,39 @@ const Details = () => {
                   <td className="border-r px-3 border-green-500 py-2">{location}</td>
                   <td className="border-r px-3 border-green-500 py-2">{status}</td>
                   <td className="border-r px-3 border-green-500 py-2">{area}</td>
-                  <td className="border-r px-3 border-green-500 py-2">{facilities}</td>
+                  <td className="border-r px-3 border-green-500 py-2">
+                    {facilities.map((facility, index) => (
+                      <span key={index}>{facility}, </span>
+                    ))}
+                  </td>
                   <td className="border-r px-3 border-green-500 py-2 text-red-500 font-semibold">{price}</td>
                 </tr>
               </tbody>
             </table>
           </div>
 
-          <div data-aos="fade-up" data-aos-duration="3000" className="my-10">
-            <p className="text-xl font-bold underline text-center mb-5">Additional Information:</p>
+          <div className="mt-10 lg:mt-24">
+            <div data-aos="fade-up" data-aos-duration="3000" className="mt-5 space-y-5">
+              <h1 className="text-2xl text-center py-3 bg-green-50 lg:text-3xl font-bold mb-5 lg:mb-10">Location</h1>
+            </div>
 
-            <ul className="lg:w-1/2 lg:mx-auto text-center">
+            <MapContainer center={[latitude, longitude]} zoom={13} scrollWheelZoom={false}>
+              <TileLayer
+                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+              />
+              <Marker position={[latitude, longitude]}>
+                <Popup>{location}</Popup>
+              </Marker>
+            </MapContainer>
+          </div>
+
+          <div data-aos="fade-up" data-aos-duration="3000" className="mt-10 lg:mt-24">
+            <div data-aos="fade-up" data-aos-duration="3000" className="mt-5 space-y-5">
+              <h1 className="text-2xl text-center py-3 bg-green-50 lg:text-3xl font-bold mb-5 lg:mb-10">Additional Information</h1>
+            </div>
+
+            <ul className="lg:w-1/2 lg:mx-auto text-center mb-10">
               <li className="py-1 border border-green-500 lg:px-10 p-5 border-b-0">
                 <span className="text-lg font-semibold ">Bathrooms: </span> {additional_information?.bathrooms || 2} pc.
               </li>

@@ -13,6 +13,7 @@ Welcome to [Homely Haven](https://singular-canvas.web.app/), your ultimate desti
 ## NPM Packages Used
 
 - [Animation.css](https://animate.style/)
+- [React leaflet](https://react-leaflet.js.org/)
 - [Swiper Slider](https://swiperjs.com/)
 - [iOS Animation](https://www.npmjs.com/package/aos)
 - [React Router](https://reactrouter.com/en/main)
@@ -28,4 +29,4 @@ Welcome to [Homely Haven](https://singular-canvas.web.app/), your ultimate desti
 
 ## Challenges Task NPM Package
 
-The npm package used for the challenges task is `animation.css`.
+The npm package used for the challenges task is `animation.css` , `react-leaflet`.

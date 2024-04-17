@@ -7,7 +7,9 @@
     "price": "1500",
     "status": "Rent",
     "area": 800,
-    "location": "Downtown",
+    "location": "Downtown, New York",
+    "latitude": 40.7128,
+    "longitude": -74.0060,
     "facilities": ["Parking", "Gym", "Swimming Pool"],
     "image": "https://i.ibb.co/9N2Vx6X/appertment.jpg",
     "additional_information": {
@@ -25,7 +27,9 @@
     "price": "30,0000",
     "status": "Sale",
     "area": 2000,
-    "location": "Suburbia",
+    "location": "Suburbia, California",
+    "latitude": 36.7783,
+    "longitude": -119.4179,
     "facilities": ["Garden", "Garage", "Fireplace"],
     "image": "https://i.ibb.co/JdVzGtj/single-House.jpg",
     "additional_information": {
@@ -43,7 +47,9 @@
     "price": "50,0000",
     "status": "Sale",
     "area": 1200,
-    "location": "Beachfront",
+    "location": "Beachfront, Florida",
+    "latitude": 27.9944,
+    "longitude": -81.7603,
     "facilities": ["Ocean View", "Fitness Center", "Security"],
     "image": "https://i.ibb.co/37X9Mvx/appertment2.jpg",
     "additional_information": {
@@ -61,7 +67,9 @@
     "price": "25,0000",
     "status": "Sale",
     "area": 1500,
-    "location": "Historic District",
+    "location": "Historic District, Massachusetts",
+    "latitude": 42.3601,
+    "longitude": -71.0589,
     "facilities": ["Patio", "Fireplace", "Walk-in Closet"],
     "image": "https://i.ibb.co/FXpsBph/Townhouse.jpg",
     "additional_information": {
@@ -78,7 +86,9 @@
     "price": "1000",
     "status": "Rent",
     "area": 500,
-    "location": "City Center",
+    "location": "City Center, Illinois",
+    "latitude": 41.8781,
+    "longitude": -87.6298,
     "facilities": ["Laundry Room", "Bike Storage", "Roof Deck"],
     "image": "https://i.ibb.co/k16YjVn/appertment3.jpg",
     "additional_information": {
@@ -96,7 +106,9 @@
     "price": "3500",
     "status": "Rent",
     "area": 1000,
-    "location": "Suburban Retirement Village",
+    "location": "Suburban Retirement Village, Arizona",
+    "latitude": 34.0489,
+    "longitude": -111.0937,
     "facilities": ["Dining Hall", "Medical Services", "Recreation Center"],
     "image": "https://i.ibb.co/8bX5tBB/Senior-Living.jpg",
     "additional_information": {
@@ -104,23 +116,7 @@
       "care_levels": ["Independent Living", "Assisted Living", "Memory Care"],
       "year_established": 2010
     }
-  },
-  {
-    "id": 7,
-    "estate_title": "Vacation Villa with Private Pool",
-    "segment_name": "Vacation Rental",
-    "description": "Escape to paradise in our stunning vacation villa nestled in a lush tropical setting. This luxurious retreat offers the ultimate in relaxation and privacy, with breathtaking views and upscale amenities. Unwind by your private pool surrounded by swaying palm trees, or sip cocktails in the outdoor kitchen while enjoying panoramic ocean views. Inside, the villa features spacious bedrooms with en-suite bathrooms, a fully equipped kitchen, and stylish living areas. Whether you're lounging poolside, exploring the island's attractions, or enjoying water sports, your vacation dreams await at our exclusive villa.",
-    "price": "5000",
-    "status": "Rent",
-    "area": 3000,
-    "location": "Island Retreat",
-    "facilities": ["Private Pool", "Outdoor Kitchen", "Ocean Access"],
-    "image": "https://i.ibb.co/4mPh5Dz/vacetion.jpg",
-    "additional_information": {
-      "bedrooms": 4,
-      "bathrooms": 4,
-      "guest_capacity": 8,
-      "amenities": ["Air Conditioning", "WiFi", "BBQ Grill"]
-    }
   }
+  
 ]
+
