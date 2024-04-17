@@ -108,7 +108,7 @@ const Login = () => {
           icon: "success",
           title: "Successfully Login!",
           showConfirmButton: false,
-          timer: 1500,
+          timer: 3000,
         });
 
         navigate(location?.state ? location.state : "/");

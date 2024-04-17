@@ -38,7 +38,7 @@ const Booking = () => {
     if (user) {
       Swal.fire({
         icon: "success",
-        title: "Successfully Registered!",
+        title: "Successfully Prosed! Your Order is Under Review.",
         showConfirmButton: false,
         timer: 3000,
       });
