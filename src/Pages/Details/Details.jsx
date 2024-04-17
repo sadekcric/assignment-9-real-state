@@ -18,7 +18,6 @@ const Details = () => {
     shadowSize: [41, 41],
     iconAnchor: [12, 41],
   });
-  console.log(defaultIcon);
 
   const item = useLoaderData();
 
