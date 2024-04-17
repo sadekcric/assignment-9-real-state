@@ -8,6 +8,7 @@ import Login from "../Pages/Login/Login";
 import PrivateRoute from "./PrivateRoute";
 import Error from "../Pages/Error/Error";
 import Contact from "../Pages/Contact/Contact";
+import Blog from "../Pages/Blogs/Blog";
 
 const router = createBrowserRouter([
   {
@@ -49,6 +50,14 @@ const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <Contact />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/blog",
+        element: (
+          <PrivateRoute>
+            <Blog />
           </PrivateRoute>
         ),
       },

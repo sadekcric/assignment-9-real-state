@@ -175,7 +175,6 @@ const Registration = () => {
                     type="text"
                     name="image"
                     id="image"
-                    required
                     placeholder="Enter Your Photo URL"
                     className="w-full px-3 py-2 border rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800"
                   />

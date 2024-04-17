@@ -1,0 +1,85 @@
+{
+  "blogs": [
+    {
+      "id": "1",
+      "title": "Creating a Cozy Reading Nook",
+      "author": "Emily Johnson",
+      "date": "2024-04-15",
+      "content": "Transform a corner of your home into a cozy reading nook with these simple tips and ideas. Dive into the world of literature in comfort and style.",
+      "image": "https://i.ibb.co/vdQZGPN/pexels-pixabay-259593.jpg",
+      "profile":"https://i.ibb.co/V2Vwn4p/pexels-pixabay-415829.jpg"
+    },
+    {
+      "id": "2",
+      "title": "Kitchen Organization Hacks for a Stress-Free Cooking Experience",
+      "author": "Michael Smith",
+      "date": "2024-04-10",
+      "content": "Discover clever kitchen organization hacks that will streamline your cooking routine and make meal preparation a breeze. Say goodbye to clutter and hello to efficiency!",
+      "image": "https://i.ibb.co/5cSTCt2/pexels-pixabay-210617.jpg",
+      "profile":"https://i.ibb.co/7kv0Fbj/pexels-andrew-dick-697509.jpg"
+    },
+    {
+      "id": "3",
+      "title": "The Art of Indoor Gardening: Bringing Nature Inside",
+      "author": "Sophia Patel",
+      "date": "2024-04-05",
+      "content": "Explore the joys of indoor gardening and learn how to create a lush oasis within your home. From succulents to herbs, discover the perfect plants for every space.",
+      "image": "https://i.ibb.co/HBsTp6p/pexels-pixabay-280221.jpg",
+      "profile":"https://i.ibb.co/DwndHjz/pexels-sindre-fs-1040880.jpg"
+    },
+    {
+      "id": "4",
+      "title": "DIY Home Decor: Upcycling Old Furniture",
+      "author": "David Thompson",
+      "date": "2024-03-30",
+      "content": "Give new life to old furniture with these creative DIY upcycling ideas. Transform your space while reducing waste and adding your personal touch to every room.",
+      "image": "https://i.ibb.co/k6tR3p0/pexels-pixabay-277667.jpg",
+      "profile":"https://i.ibb.co/QrxPfXf/pexels-emily-garland-1499327.jpg"
+    },
+    {
+      "id": "5",
+      "title": "Mastering the Art of Feng Shui in Your Home",
+      "author": "Olivia Lee",
+      "date": "2024-03-25",
+      "content": "Unlock the secrets of Feng Shui and bring harmony and balance into your home. Learn how to arrange furniture, incorporate natural elements, and create positive energy flow.",
+      "image": "https://i.ibb.co/XpnPH6Z/pexels-david-gonzales-2640604.jpg",
+      "profile":"https://i.ibb.co/ZSTc1QZ/pexels-asim-alnamat-343717.jpg"
+    },
+    {
+      "id": "6",
+      "title": "Tips for Hosting the Perfect Dinner Party",
+      "author": "Daniel Brown",
+      "date": "2024-03-20",
+      "content": "Impress your guests with a memorable dinner party using these expert tips and tricks. From menu planning to table decorations, ensure every detail is flawless.",
+      "image": "https://i.ibb.co/Jrw1zDy/pexels-tom-mal-k-2581922.jpg",
+      "profile":"https://i.ibb.co/NNjs2h4/pexels-mehdi-fayezi-6542596.jpg"
+    },
+    {
+      "id": "7",
+      "title": "Decluttering 101: Simplify Your Space",
+      "author": "Emma Wilson",
+      "date": "2024-03-15",
+      "content": "Take control of clutter and reclaim your space with our comprehensive guide to decluttering. Say goodbye to chaos and hello to a more organized and peaceful home.",
+      "image": "https://i.ibb.co/P5bDrz1/pexels-frans-van-heerden-1438832.jpg",
+      "profile":"https://i.ibb.co/YPjGRzq/pexels-spencer-selover-428364.jpg"
+    },
+    {
+      "id": "8",
+      "title": "Creating a Relaxing Bedroom Retreat",
+      "author": "Jacob Martinez",
+      "date": "2024-03-10",
+      "content": "Transform your bedroom into a serene retreat with these simple yet effective tips. Create a calming atmosphere that promotes rest and relaxation for a better night's sleep.",
+      "image": "https://i.ibb.co/VNbvGgt/pexels-thgusstavo-santana-2102587.jpg",
+      "profile":"https://i.ibb.co/VHZhP5L/pexels-andrea-piacquadio-760118.jpg"
+    },
+    {
+      "id": "9",
+      "title": "The Joy of Homemade Candles: A Beginner's Guide",
+      "author": "Ava White",
+      "date": "2024-03-05",
+      "content": "Discover the therapeutic art of candle making and learn how to create your own homemade candles. Unleash your creativity while filling your home with delightful scents.",
+      "image": "https://i.ibb.co/7Ny6ZTS/istockphoto-2040363544-2048x2048.jpg",
+      "profile":"https://i.ibb.co/H7Pr5cx/pexels-ntsikelelo-radebe-12192379.jpg"
+    }
+  ]
+}

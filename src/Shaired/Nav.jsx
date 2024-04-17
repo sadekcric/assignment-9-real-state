@@ -43,14 +43,14 @@ const Nav = () => {
       <li className="flex font-semibold">
         <NavLink
           rel="noopener noreferrer"
-          to="/updateProfile"
+          to="/blog"
           className={({ isActive }) =>
             isActive
               ? "py-3 flex items-center px-6 -mb-1 bg-green-500 rounded-md dark:border- dark:text-violet-600 dark:border-violet-600 transition"
               : "flex items-center py-3 px-6 -mb-1 border-b-2 border-green-500 dark:border- dark:text-violet-600 dark:border-violet-600 transition"
           }
         >
-          Update Profile
+          Blog
         </NavLink>
       </li>
 
@@ -91,6 +91,20 @@ const Nav = () => {
           </NavLink>
         </li>
       )}
+
+      <li className="flex font-semibold">
+        <NavLink
+          rel="noopener noreferrer"
+          to="/updateProfile"
+          className={({ isActive }) =>
+            isActive
+              ? "py-3 flex items-center px-6 -mb-1 bg-green-500 rounded-md dark:border- dark:text-violet-600 dark:border-violet-600 transition"
+              : "flex items-center py-3 px-6 -mb-1 border-b-2 border-green-500 dark:border- dark:text-violet-600 dark:border-violet-600 transition"
+          }
+        >
+          Update Profile
+        </NavLink>
+      </li>
     </>
   );
 
