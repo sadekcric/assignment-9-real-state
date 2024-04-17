@@ -1,7 +1,7 @@
 import moment from "moment";
+import { PropTypes } from "prop-types";
 
 const SingleBlog = ({ blog }) => {
-  console.log(blog);
   const { profile, title, author, date, content, image } = blog;
   return (
     <>
@@ -38,3 +38,7 @@ const SingleBlog = ({ blog }) => {
 };
 
 export default SingleBlog;
+
+SingleBlog.propTypes = {
+  blog: PropTypes.object,
+};
