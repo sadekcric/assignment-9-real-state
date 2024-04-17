@@ -112,15 +112,17 @@ const Details = () => {
               <h1 className="text-2xl text-center py-3 bg-green-50 lg:text-3xl font-bold mb-5 lg:mb-10">Location</h1>
             </div>
 
-            <MapContainer center={[latitude, longitude]} zoom={13} scrollWheelZoom={false}>
-              <TileLayer
-                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-              />
-              <Marker position={[latitude, longitude]} icon={defaultIcon}>
-                <Popup>{location}</Popup>
-              </Marker>
-            </MapContainer>
+            <div data-aos-duration="3000" data-aos="zoom-in">
+              <MapContainer center={[latitude, longitude]} zoom={13} scrollWheelZoom={false}>
+                <TileLayer
+                  attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                  url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                />
+                <Marker position={[latitude, longitude]} icon={defaultIcon}>
+                  <Popup>{location}</Popup>
+                </Marker>
+              </MapContainer>
+            </div>
           </div>
 
           <div data-aos="fade-up" data-aos-duration="3000" className="mt-10 lg:mt-24">
