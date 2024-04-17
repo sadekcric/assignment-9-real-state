@@ -3,7 +3,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
 import { Helmet } from "react-helmet-async";
-import { MapContainer, Marker, Popup, TileLayer, useMap } from "react-leaflet";
+import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 import "./style.css";
 import "leaflet/dist/leaflet.css";
 
@@ -11,6 +11,14 @@ const Details = () => {
   useEffect(() => {
     AOS.init();
   }, []);
+
+  const defaultIcon = L.icon({
+    iconUrl: "https://i.ibb.co/xzBHMC5/pin-1.png",
+    iconSize: [41, 41],
+    shadowSize: [41, 41],
+    iconAnchor: [12, 41],
+  });
+  console.log(defaultIcon);
 
   const item = useLoaderData();
 
@@ -110,7 +118,7 @@ const Details = () => {
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
               />
-              <Marker position={[latitude, longitude]}>
+              <Marker position={[latitude, longitude]} icon={defaultIcon}>
                 <Popup>{location}</Popup>
               </Marker>
             </MapContainer>
