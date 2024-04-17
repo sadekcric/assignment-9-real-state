@@ -19,6 +19,7 @@ const CommonRoute = ({ children }) => {
   const [edit, setEdit] = useState(false);
   const provider = new GoogleAuthProvider();
   const gitProvider = new GithubAuthProvider();
+  const [profileActive, setProfileActive] = useState(false);
 
   useEffect(() => {
     fetch("/Data.json")
@@ -60,6 +61,7 @@ const CommonRoute = ({ children }) => {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
+      setProfileActive(false);
       setLoader(false);
     });
 
@@ -80,6 +82,8 @@ const CommonRoute = ({ children }) => {
     setEdit,
     googleLogin,
     githubLogin,
+    profileActive,
+    setProfileActive,
   };
 
   return <CommonContext.Provider value={info}>{children}</CommonContext.Provider>;

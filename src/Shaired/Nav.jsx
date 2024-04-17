@@ -7,8 +7,7 @@ import defaultProfile from "../assets/defaultProfile.png";
 
 const Nav = () => {
   const [hide, setHide] = useState("hidden");
-  const { user, firebaseLogOut, loader } = useContext(CommonContext);
-  const [profileActive, setProfileActive] = useState(false);
+  const { user, firebaseLogOut, loader, profileActive, setProfileActive } = useContext(CommonContext);
 
   if (loader) {
     return (
