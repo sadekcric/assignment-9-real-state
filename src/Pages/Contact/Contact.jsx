@@ -1,6 +1,7 @@
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 
 const Contact = () => {
   useEffect(() => {
@@ -9,6 +10,9 @@ const Contact = () => {
 
   return (
     <div className="bg-green-50 min-h-[calc(100vh-394px)]">
+      <Helmet>
+        <title>Homely Haven | Contact</title>
+      </Helmet>
       <div>
         <h1
           data-aos-duration="3000"

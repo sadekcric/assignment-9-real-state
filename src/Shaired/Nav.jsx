@@ -4,6 +4,7 @@ import { Link, NavLink } from "react-router-dom";
 import { CommonContext } from "../Route/CommonRoute";
 import { Tooltip as ReactTooltip } from "react-tooltip";
 import defaultProfile from "../assets/defaultProfile.png";
+import profile from "../assets/defaultProfile.jpg";
 
 const Nav = () => {
   const [hide, setHide] = useState("hidden");
@@ -158,7 +159,7 @@ const Nav = () => {
                 <h2 className="text-xl font-semibold text-center border-b-2 border-green-900 mb-3 ">USER</h2>
                 <ul className="space-y-3">
                   <li>
-                    <img className="w-full h-52" src={user.photoURL} alt="" />
+                    <img className="w-full h-52" src={user.photoURL || profile} alt="" />
                   </li>
                   <li>
                     <span className="font-semibold">Name: </span> {user.displayName}

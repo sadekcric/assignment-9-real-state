@@ -3,6 +3,7 @@ import banner from "../../assets/blogtitle.jpg";
 import SingleBlog from "./SingleBlog";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { Helmet } from "react-helmet-async";
 
 const Blog = () => {
   const [blogs, setBlogs] = useState([]);
@@ -19,6 +20,9 @@ const Blog = () => {
 
   return (
     <div data-aos="fade-down" data-aos-duration="1500" className="bg-green-50 p-3">
+      <Helmet>
+        <title>Homely Haven | Blogs</title>
+      </Helmet>
       <div className="relative">
         <div className="mt-10 h-[400px]">
           <img className=" h-full w-full object-cover object-center" src={banner} alt="" />
